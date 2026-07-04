@@ -59,10 +59,7 @@ json-to-bigquery/
 │   ├── approach2_streaming.py     # ijson streaming + batching
 │   └── approach3_jsonl.py         # line-by-line + dead-letter handling
 ├── images/                        # diagrams for each approach (PNG + SVG source)
-├── docs/
-│   └── video_script.md            # storyboard/voiceover script explaining the repo
 ├── requirements.txt
-├── LICENSE
 └── README.md
 ```
 
