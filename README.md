@@ -72,6 +72,3 @@ json-to-bigquery/
 - Speed vs. memory vs. fault tolerance — pick two, plan for the third.
 - Inspect the file before picking a parsing method; don't default out of habit.
 
-## License
-
-MIT — see [LICENSE](LICENSE).
