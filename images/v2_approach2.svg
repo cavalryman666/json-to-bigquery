@@ -1,0 +1,79 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22b8cf"/>
+      <stop offset="50%" stop-color="#15aabf"/>
+      <stop offset="100%" stop-color="#0ca678"/>
+    </linearGradient>
+    <linearGradient id="fileGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffa94d"/>
+      <stop offset="100%" stop-color="#e8590c"/>
+    </linearGradient>
+    <linearGradient id="memGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#66d9e8"/>
+      <stop offset="100%" stop-color="#0b7285"/>
+    </linearGradient>
+    <linearGradient id="bqGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#69db7c"/>
+      <stop offset="100%" stop-color="#2f9e44"/>
+    </linearGradient>
+    <filter id="shadow2" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="600" fill="url(#bg2)"/>
+  <circle cx="70" cy="550" r="100" fill="#ffffff" opacity="0.08"/>
+  <circle cx="940" cy="60" r="80" fill="#ffffff" opacity="0.08"/>
+
+  <text x="500" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff" text-anchor="middle">APPROACH 2 · STREAMING</text>
+  <text x="500" y="100" font-family="Arial, sans-serif" font-size="16" fill="#e6fcf5" text-anchor="middle" opacity="0.9">ijson parses record by record — memory stays flat no matter the file size</text>
+
+  <!-- Large file icon -->
+  <g filter="url(#shadow2)">
+    <path d="M 60 220 Q 60 205 76 205 L 160 205 L 200 245 L 200 400 Q 200 415 184 415 L 76 415 Q 60 415 60 400 Z" fill="url(#fileGrad2)"/>
+    <path d="M 160 205 L 160 245 L 200 245 Z" fill="#bf400a"/>
+  </g>
+  <text x="130" y="320" font-family="monospace" font-size="18" font-weight="700" fill="#5c1a00" text-anchor="middle">.json</text>
+  <text x="130" y="445" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Large nested file</text>
+
+  <!-- trickle dots -->
+  <g fill="#ffe066">
+    <circle cx="250" cy="260" r="12"/>
+    <circle cx="290" cy="300" r="12"/>
+    <circle cx="250" cy="340" r="12"/>
+    <circle cx="330" cy="260" r="12"/>
+    <circle cx="370" cy="300" r="12"/>
+    <circle cx="330" cy="340" r="12"/>
+  </g>
+  <text x="310" y="390" font-family="monospace" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">ijson.items()</text>
+
+  <!-- Memory block small -->
+  <g filter="url(#shadow2)">
+    <rect x="430" y="230" width="180" height="140" rx="16" fill="url(#memGrad2)"/>
+  </g>
+  <text x="520" y="265" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#ffffff" text-anchor="middle">MEMORY</text>
+  <rect x="450" y="285" width="140" height="24" rx="5" fill="#c3fae8"/>
+  <text x="520" y="335" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#e6fcf5" text-anchor="middle">one record at a time</text>
+
+  <!-- Arrow -->
+  <path d="M 630 300 L 750 300" stroke="#ffffff" stroke-width="4" marker-end="url(#arrowW2)" stroke-linecap="round"/>
+  <defs>
+    <marker id="arrowW2" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#ffffff"/>
+    </marker>
+  </defs>
+  <text x="690" y="285" font-family="monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">batch of 5,000</text>
+
+  <!-- BQ target -->
+  <g filter="url(#shadow2)">
+    <rect x="770" y="215" width="170" height="180" rx="16" fill="url(#bqGrad2)"/>
+  </g>
+  <text x="855" y="275" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">BigQuery</text>
+  <text x="855" y="305" font-family="Arial, sans-serif" font-size="30" text-anchor="middle">📊</text>
+  <text x="855" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Table</text>
+
+  <!-- Warning banner -->
+  <rect x="70" y="500" width="860" height="60" rx="14" fill="#ffffff" opacity="0.92"/>
+  <text x="500" y="537" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0b7285" text-anchor="middle">⚠ Batch size matters — too small = too many API calls, too large = timeouts</text>
+</svg>
